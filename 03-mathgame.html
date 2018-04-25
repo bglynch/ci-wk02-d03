@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/03-style.css" type="text/css" />
+    <title>Maths Game</title>
+</head>
+
+<body>
+    <header>
+        <h1>Math Game</h1>
+    </header>
+    <main>
+        <section class=" pick-game col-xs-12">
+            <button onclick="setAdditionGame()" class="btn btn-success pick-game-addition col-xs-12 col-sm-4">Addition</button>
+            <button onclick="setSubtractionGame()" class="btn btn-danger pick-game-subtraction col-xs-12 col-sm-4">Subtraction</button>
+            <button onclick="setMultiplicationGame()" class="btn btn-warning pick-game-multiplication col-xs-12 col-sm-4">Multiplication</button>
+        </section>
+        <section class= "question-area col-xs-8">
+            <p>What is ...</p>
+            <p id="question"></p>
+            <!--
+       return false = caouses form to not refresh the page. if page refreshed, score is lost.
+       -->
+            <form id="quizForm" name="answerForm" onsubmit="checkAnswer(); return false;" action="#" data-gametype="addition">
+
+                Enter answer: <br>
+                <input class="col-xs-8" type="number" name="answer">
+                <input type="hidden" name="rightAnswer">
+                <input class="btn btn-default col-xs-4" type="submit" value="submit">
+            </form>
+        </section>
+        <section class= "score-area col-xs-4">
+            <p><span id="score">0</span></p>
+            <p>Your Score</p>
+        </section>
+
+    </main>
+    <script type="text/javascript" src="game.js"></script>
+</body>
+
+</html>
